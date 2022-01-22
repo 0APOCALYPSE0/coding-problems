@@ -1,5 +1,8 @@
 import java.util.ArrayList;
-
+/**
+ * Program to represent undirected graph using adjacency list
+ * @author Aakash Giri
+ */
 public class GraphAdjacencyList {
 
   // A utility function to add an edge in an

@@ -1,3 +1,7 @@
+/**
+ * Program to represent undirected graph using adjacency matrix
+ * @author Aakash Giri
+ */
 public class GraphAdjacencyMatrix {
 
   // A utility function to add an edge in an
