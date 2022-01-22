@@ -12,7 +12,7 @@ public class GraphBFSTraversal {
 
   // Number of vertices
   private int V;
-  // Adjacency List
+  // Adjacency List Representation
   private LinkedList<Integer> adj[];
 
   // Constructor
