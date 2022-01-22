@@ -1,4 +1,4 @@
-class GraphAdjacencyMatrix {
+public class GraphAdjacencyMatrix {
 
   // A utility function to add an edge in an
   // undirected graph
