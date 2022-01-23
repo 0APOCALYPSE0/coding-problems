@@ -7,8 +7,8 @@ public class GraphAdjacencyMatrix {
   // A utility function to add an edge in an
   // undirected graph
   static void addEdge(int adj[][], int u, int v){
-      adj[u][v] = 1;
-      adj[v][u] = 1;
+    adj[u][v] = 1;
+    adj[v][u] = 1;
   }
 
   // A utility function to remove an edge in on

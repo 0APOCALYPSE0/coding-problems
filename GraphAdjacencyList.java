@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.util.*;
+import java.io.*;
 /**
  * Program to represent undirected graph using adjacency list
  * @author Aakash Giri
@@ -7,20 +8,16 @@ public class GraphAdjacencyList {
 
   // A utility function to add an edge in an
   // undirected graph
-  static void addEdge(ArrayList<ArrayList<Integer> > adj,
-                      int u, int v)
-  {
-      adj.get(u).add(v);
-      adj.get(v).add(u);
+  static void addEdge(ArrayList<ArrayList<Integer> > adj, int u, int v){
+    adj.get(u).add(v);
+    adj.get(v).add(u);
   }
 
   // A utility function to remove an edge in an
   // undirected graph
-  static void removeEdge(ArrayList<ArrayList<Integer> > adj,
-                      int u, int v)
-  {
-      adj.get(u).remove(v);
-      adj.get(v).remove(u);
+  static void removeEdge(ArrayList<ArrayList<Integer> > adj, int u, int v){
+    adj.get(u).remove(v);
+    adj.get(v).remove(u);
   }
 
   // A utility function to print the adjacency list

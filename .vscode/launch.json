@@ -1,0 +1,49 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch GraphAdjacencyList",
+      "request": "launch",
+      "mainClass": "GraphAdjacencyList",
+      "projectName": "coding problems_b03dabe"
+    },
+    {
+      "type": "java",
+      "name": "Launch GraphAdjacencyMatrix",
+      "request": "launch",
+      "mainClass": "GraphAdjacencyMatrix",
+      "projectName": "coding problems_b03dabe"
+    },
+    {
+      "type": "java",
+      "name": "Launch GraphBFSTraversal",
+      "request": "launch",
+      "mainClass": "GraphBFSTraversal",
+      "projectName": "coding problems_b03dabe"
+    },
+    {
+      "type": "java",
+      "name": "Launch GraphDFSTraversal",
+      "request": "launch",
+      "mainClass": "GraphDFSTraversal",
+      "projectName": "coding problems_b03dabe"
+    },
+    {
+      "type": "java",
+      "name": "Launch MergeSort",
+      "request": "launch",
+      "mainClass": "MergeSort",
+      "projectName": "coding problems_b03dabe"
+    }
+  ]
+}
