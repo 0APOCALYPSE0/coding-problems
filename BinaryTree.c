@@ -26,6 +26,7 @@ void preorder(struct btnode *t);
 void postorder(struct btnode *t);
 void inorder(struct btnode *t);
 void levelorder(struct btnode *t);
+int maxDepth(struct btnode *t);
 void search1(struct btnode *t,int data);
 int smallest(struct btnode *t);
 int largest(struct btnode *t);
@@ -48,7 +49,8 @@ void main(){
   printf("4 - Preorder Traversal\n");
   printf("5 - Postorder Traversal\n");
   printf("6 - Levelorder Traversal\n");
-  printf("7 - Exit\n");
+  printf("7 - Find max depth\n");
+  printf("8 - Exit\n");
   while(1){
     printf("\nEnter your choice : ");
     scanf("%d", &ch);
@@ -72,6 +74,9 @@ void main(){
       levelorder(root);
       break;
     case 7:
+      printf("Max depth: %d",maxDepth(root));
+      break;
+    case 8:
       exit(0);
     default :
       printf("Wrong choice, Please enter correct choice  ");
@@ -183,6 +188,20 @@ void levelorder(struct btnode *t){
       enqueue(tempNode->r);
     }
   };
+}
+
+/* Find the max depth of the binary tree */
+int maxDepth(struct btnode *t){
+  if(t == NULL){
+    return 0;
+  }
+  int lDepth = maxDepth(t->l);
+  int rDepth = maxDepth(t->r);
+  if(lDepth > rDepth){
+    return (lDepth + 1);
+  }else{
+    return (rDepth + 1);
+  }
 }
 
 /* Search for the appropriate position to insert the new node */
