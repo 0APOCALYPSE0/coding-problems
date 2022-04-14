@@ -16,7 +16,6 @@
 class longestConsecutiveStringOf1{
   public static void main(String[] args) {
 		String str = "111011101";
-		boolean flag = false;
 		String strArr[] = new String[str.length()];
 		int count = 0;
 		String temp = "";
@@ -33,14 +32,10 @@ class longestConsecutiveStringOf1{
 		            strArr[k] = temp;
 		            k++;
 		            temp = "";
-		            flag = true;
 		        }
 		    }
 
 		    if(str.charAt(i) == '0'){
-		        if(count == 1){
-		            flag = true;
-		        }
 		        if(count != 0){
 		            if(maxValue < count){
 		                maxValue = count;
@@ -53,24 +48,20 @@ class longestConsecutiveStringOf1{
 		        }
 		    }
 		}
-		if(flag == false){
-		    System.out.println(maxValue);
-		}
-        		maxValue = 0;
 		for(int i=0; i<k-1; i++){
 		    String[] arrOfStr1 = strArr[i].split("-");
 		    String[] arrOfStr2 = strArr[i+1].split("-");
 		    if(Integer.parseInt(arrOfStr2[0]) - Integer.parseInt(arrOfStr1[1]) == 2){
 		        int val1 = Integer.parseInt(arrOfStr1[1]) - Integer.parseInt(arrOfStr1[0]);
 		        int val2 = Integer.parseInt(arrOfStr2[1]) - Integer.parseInt(arrOfStr2[0]);
-		        int val = val1+val2+2+1;
+		        int val = val1+val2+2;
+						if(k > 2){
+							val = val+1;
+						}
 		        if(maxValue < val){
 		            maxValue = val;
 		        }
 		    }
-		}
-		if(flag == true){
-		    System.out.println(maxValue);
 		}
 	}
 }
