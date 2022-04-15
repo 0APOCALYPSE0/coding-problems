@@ -15,7 +15,7 @@
 
 class longestConsecutiveStringOf1{
   public static void main(String[] args) {
-		String str = "111011101";
+		String str = "100001011";
 		String strArr[] = new String[str.length()];
 		int count = 0;
 		String temp = "";
@@ -23,45 +23,59 @@ class longestConsecutiveStringOf1{
 		int maxValue = 0;
 
 		for(int i=0; i<str.length(); i++){
-		    if(str.charAt(i) == '1'){
-		        count++;
-		        if(count == 1 && i != str.length()-1){
-		            temp = temp+i+"-";
-		        }else if(count == 1){
-		            temp = i+"-"+i;
-		            strArr[k] = temp;
-		            k++;
-		            temp = "";
-		        }
-		    }
+			if(str.charAt(i) == '1'){
+				count++;
+				if(count == 1 && i == str.length()-1){
+					temp = i+"-"+i;
+					strArr[k] = temp;
+					k++;
+					temp = "";
+				}else if(i == str.length() - 1){
+					temp = temp+i;
+					strArr[k] = temp;
+					k++;
+					temp = "";
+				}else if(count == 1){
+					temp = temp+i+"-";
+				}
+				if(maxValue < count){
+					maxValue = count;
+				}
+			}
 
-		    if(str.charAt(i) == '0'){
-		        if(count != 0){
-		            if(maxValue < count){
-		                maxValue = count;
-		            }
-		            count = 0;
-        	        		  temp = temp+(i-1);
-        	                      strArr[k] = temp;
-        	                      k++;
-        	                      temp = "";
-		        }
-		    }
+			if(str.charAt(i) == '0'){
+				if(count != 0){
+					if(maxValue < count){
+							maxValue = count;
+					}
+					count = 0;
+					temp = temp+(i-1);
+					strArr[k] = temp;
+					k++;
+					temp = "";
+				}
+			}
 		}
+		boolean flag = false;
 		for(int i=0; i<k-1; i++){
-		    String[] arrOfStr1 = strArr[i].split("-");
-		    String[] arrOfStr2 = strArr[i+1].split("-");
-		    if(Integer.parseInt(arrOfStr2[0]) - Integer.parseInt(arrOfStr1[1]) == 2){
-		        int val1 = Integer.parseInt(arrOfStr1[1]) - Integer.parseInt(arrOfStr1[0]);
-		        int val2 = Integer.parseInt(arrOfStr2[1]) - Integer.parseInt(arrOfStr2[0]);
-		        int val = val1+val2+2;
-						if(k > 2){
-							val = val+1;
-						}
-		        if(maxValue < val){
-		            maxValue = val;
-		        }
-		    }
+			String[] arrOfStr1 = strArr[i].split("-");
+			String[] arrOfStr2 = strArr[i+1].split("-");
+			if(Integer.parseInt(arrOfStr2[0]) - Integer.parseInt(arrOfStr1[1]) == 2){
+				flag = true;
+				int val1 = Integer.parseInt(arrOfStr1[1]) - Integer.parseInt(arrOfStr1[0]);
+				int val2 = Integer.parseInt(arrOfStr2[1]) - Integer.parseInt(arrOfStr2[0]);
+				int val = val1+val2+2;
+				if(k > 2){
+					val = val+1;
+				}
+				if(maxValue < val){
+					maxValue = val;
+				}
+			}
 		}
+		if(flag != true && k > 1){
+			maxValue++;
+		}
+		System.out.println(maxValue);
 	}
 }
