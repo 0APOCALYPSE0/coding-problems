@@ -17,8 +17,9 @@ public class SmallestPositiveMissingNumber {
   public static void main(String[] args) {
     int arr[] = {0,-9,1,3,-4,5};
     int length = arr.length;
-    boolean bool[] = new boolean[length];
-    for(int i=0; i<length; i++){
+    int boolLength = 2000000;
+    boolean bool[] = new boolean[boolLength];
+    for(int i=0; i<boolLength; i++){
       bool[i] = false;
     }
     for(int i=0; i<length; i++){
